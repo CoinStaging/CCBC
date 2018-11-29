@@ -670,7 +670,6 @@ void PrivacyDialog::setBalance(const CAmount& balance, const CAmount& unconfirme
 
 	// Display global supply
 	ui->labelZsupplyAmount->setText(QString::number(chainActive.Tip()->GetZerocoinSupply() / COIN) + QString(" <b>zPIV </b> "));
-	ui->labelZsupplyAmount_2->setText(QString::number(chainActive.Tip()->GetZerocoinSupply() / COIN) + QString(" <b>zPIV </b> "));
 
 	for (auto denom : libzerocoin::zerocoinDenomList) {
 		int64_t nSupply = chainActive.Tip()->mapZerocoinSupply.at(denom);
