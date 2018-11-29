@@ -703,7 +703,8 @@ void PrivacyDialog::setBalance(const CAmount& balance, const CAmount& unconfirme
 		default:
 			// Error Case: don't update display
 			break;
-
+		}
+	}
 }
 
 void PrivacyDialog::updateDisplayUnit()
