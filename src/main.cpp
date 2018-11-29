@@ -5761,6 +5761,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
         // available. If not, ask the first peer connected for them.
         if (!pSporkDB->SporkExists(SPORK_14_NEW_PROTOCOL_ENFORCEMENT) &&
             !pSporkDB->SporkExists(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2) &&
+            !pSporkDB->SporkExists(SPORK_19_NEW_PROTOCOL_ENFORCEMENT_3) &&
             !pSporkDB->SporkExists(SPORK_11_LOCK_INVALID_UTXO) &&
             !pSporkDB->SporkExists(SPORK_16_ZEROCOIN_MAINTENANCE_MODE)) {
             LogPrintf("Required sporks not found, asking peer to send them\n");
@@ -6583,8 +6584,17 @@ int ActiveProtocol()
 */
 
     // SPORK_15 will be used after SPORK_14 is used and commented out from being turned off.
-
+	// SPORK_15 has been turned on and will be commented out to prevent from being turned off. 
+	// Approved by TFinch 11/29/2018
+    /*
     if (IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
+        return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
+    return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
+	*/
+
+	// SPORK_19 will be used after SPORK_15 is used and commented out from being turned off.
+
+	if (IsSporkActive(SPORK_19_NEW_PROTOCOL_ENFORCEMENT_3))
         return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
     return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
 }
