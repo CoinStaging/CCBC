@@ -131,11 +131,11 @@ OverviewPage::OverviewPage(QWidget* parent) : QWidget(parent),
     nDisplayUnit = 0; // just make sure it's not unitialized
     ui->setupUi(this);
 
-	ui->pushButton_Website->setIcon(QIcon(GUIUtil::getThemeImage(":/icons/website")));
-    ui->pushButton_Discord->setIcon(QIcon(GUIUtil::getThemeImage(":/icons/discord")));
-    ui->pushButton_Github->setIcon(QIcon(GUIUtil::getThemeImage(":/icons/github")));
-    ui->pushButton_Twitter->setIcon(QIcon(GUIUtil::getThemeImage(":/icons/twitter")));
-    ui->pushButton_Explorer->setIcon(QIcon(GUIUtil::getThemeImage(":/icons/explorer")));
+	ui->pushButton_Website->setIcon(QIcon(":/icons/website"));
+    ui->pushButton_Discord->setIcon(QIcon(":/icons/discord"));
+    ui->pushButton_Github->setIcon(QIcon(":/icons/github"));
+    ui->pushButton_Twitter->setIcon(QIcon(":/icons/twitter"));
+    ui->pushButton_Explorer->setIcon(QIcon(":/icons/explorer"));
 
     // Recent transactions
     ui->listTransactions->setItemDelegate(txdelegate);
