@@ -76,7 +76,7 @@ private slots:
     void pushButton_Discord();
     void pushButton_Github();
     void pushButton_Twitter();
-    void pushButton_Explorer(;)
+    void pushButton_Explorer();
     void updateMasternodeInfo();
     void updatBlockChainInfo();
 };
