@@ -1078,7 +1078,8 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../res/icons/icon_www.png</normaloff>../res/icons/icon_www.png</iconset>
+           <normaloff>:/icons/website</normaloff>:/icons/website
+         </iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -1107,7 +1108,8 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../res/icons/icon_explorer.png</normaloff>../res/icons/icon_explorer.png</iconset>
+           <normaloff>:/icons/explorer</normaloff>:/icons/explorer
+         </iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -1136,7 +1138,8 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../res/icons/icon_github.gif</normaloff>../res/icons/icon_github.gif</iconset>
+           <normaloff>:/icons/github</normaloff>:/icons/github
+         </iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -1165,7 +1168,8 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../res/icons/icon_discord.png</normaloff>../res/icons/icon_discord.png</iconset>
+           <normaloff>:/icons/discord</normaloff>:/icons/discord
+         </iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -1194,7 +1198,8 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../res/icons/icon_twitter.png</normaloff>../res/icons/icon_twitter.png</iconset>
+           <normaloff>:/icons/twitter</normaloff>:/icons/twitter
+         </iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -1210,7 +1215,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../../../../../ccbc/CryptoCashBack_Hub/src/qt/ccbc.qrc"/>
+  <include location="/CryptoCashBack_Hub/ccbc/src/qt/ccbc.qrc"/>
  </resources>
  <connections/>
 </ui>
