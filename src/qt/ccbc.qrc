@@ -53,10 +53,11 @@
         <file alias="browse">res/icons/browse.png</file>
         <file alias="staking_active">res/icons/staking_active.png</file>
         <file alias="staking_inactive">res/icons/staking_inactive.png</file>
-        <file alias="twitter">res/icons/twitter.png</file>
-        <file alias="telegram">res/icons/telegram.png</file>
-        <file alias="discord">res/icons/discord.png</file>
-        <file alias="sitelogo">res/icons/sitelogo.png</file>
+        <file alias="icon_twitter">res/icons/icon_twitter.png</file>
+        <file alias="icon_www">res/icons/icon_www.png</file>
+        <file alias="icon_discord">res/icons/icon_discord.png</file>
+        <file alias="icon_explroer">res/icons/icon_explorer.png</file>
+        <file alias="icon_github">res/icons/icon_github.gif</file>
     </qresource>
     <qresource prefix="/css">
         <file alias="default">res/css/default.css</file>

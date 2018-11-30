@@ -479,22 +479,27 @@ void OverviewPage::showOutOfSyncWarning(bool fShow)
     ui->labelTransactionsStatus->setVisible(fShow);
 }
 
-void OverviewPage::on_pushButton_2_clicked()
+void OverviewPage::pushButton_Website()
 {
-    QDesktopServices::openUrl(QUrl("https://twitter.com/CCBcoin", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://ccbcoin.club/", QUrl::TolerantMode));
 }
 
-void OverviewPage::on_pushButton_3_clicked()
+void OverviewPage::pushButton_Explorer()
 {
-    QDesktopServices::openUrl(QUrl("https://t.me/ccbchannel", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://explorer.ccbcoin.club/#/", QUrl::TolerantMode));
 }
 
-void OverviewPage::on_pushButton_clicked()
+void OverviewPage::pushButton_Github()
+{
+    QDesktopServices::openUrl(QUrl("https://github.com/CryptoCashBack-Hub/CCBC", QUrl::TolerantMode));
+}
+
+void OverviewPage::pushButton_Discord()
 {
     QDesktopServices::openUrl(QUrl("https://discord.gg/MVVGzv6", QUrl::TolerantMode));
 }
 
-void OverviewPage::on_pushButton_4_clicked()
+void OverviewPage::pushButton_Twitter()
 {
-    QDesktopServices::openUrl(QUrl("https://ccbcoin.club/", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://twitter.com/CCBcoin", QUrl::TolerantMode));
 }
