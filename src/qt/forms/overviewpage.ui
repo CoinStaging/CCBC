@@ -1078,7 +1078,7 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>:/icons/website</normaloff>:/icons/website</iconset>
+          <normaloff>../res/icons/icon_www.png</normaloff>../res/icons/icon_www.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -1107,7 +1107,7 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>:/icons/discord</normaloff>:/icons/discord</iconset>
+          <normaloff>../res/icons/icon_explorer.png</normaloff>../res/icons/icon_explorer.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -1136,7 +1136,7 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>:/icons/telegram</normaloff>:/icons/telegram</iconset>
+          <normaloff>../res/icons/icon_github.gif</normaloff>../res/icons/icon_github.gif</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -1165,7 +1165,7 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>:/icons/twitter</normaloff>:/icons/twitter</iconset>
+          <normaloff>../res/icons/icon_discord.png</normaloff>../res/icons/icon_discord.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -1194,7 +1194,7 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>:/icons/explorer</normaloff>:/icons/explorer</iconset>
+          <normaloff>../res/icons/icon_twitter.png</normaloff>../res/icons/icon_twitter.png</iconset>
         </property>
         <property name="iconSize">
          <size>
