@@ -1442,30 +1442,35 @@ QWidget .QFrame#frame .QLabel#label_Supply_value { /* Coin Supply amount */
     color: #333;
     margin-left: 0px;
 }
-
+/********************************************************************************/
 /****************************URL LINKS******************************************/
+/******************************************************************************/
 QWidget .QFrame#frame .QPushButton#pushButton_Website { /*Website Button*/
     background-color: transparent;
+    background-image: url(':/icons/website.png');
 }
 
 QWidget .QFrame#frame .QPushButton#pushButton_Discord { /*Discord Button*/
     background-color: transparent;
+    background-image: url(':/icons/discord.png');
 }
 
 QWidget .QFrame#frame .QPushButton#pushButton_Github { /*Github Button*/
     background-color: transparent;
+    background-image: url(':/icons/github.png');
 }
 
 QWidget .QFrame#frame .QPushButton#pushButton_Twitter { /*Twitter Button*/
     background-color: transparent;
+    background-image: url(':/icons/twitter.png');
 }
 
 QWidget .QFrame#frame .QPushButton#pushButton_Explorer { /*Explorer Button*/
     background-color: transparent;
+    background-image: url(':/icons/explorer.png');
 }
 
 /*These are the left over combined labels and qt items*/
-
 
 QWidget .QFrame#frame_3 .QLabel#label_5z { /* Combined Balance Label */
     qproperty-alignment: 'AlignVCenter | AlignLeft';
@@ -1520,7 +1525,11 @@ QWidget .QFrame#frame_3 .QLabel#labelTotalz { /* Available total Balance */
     margin-left: 0px;
 }
 
+/******************************************************************************************/
+/*****************************************************************************************/
 /**************************** RECENT TRANSACTIONS ***************************************/
+/***************************************************************************************/
+/**************************************************************************************/
 
 QWidget .QFrame#frame_2 { /* Transactions Widget */
     min-width: 410px;
@@ -1528,8 +1537,7 @@ QWidget .QFrame#frame_2 { /* Transactions Widget */
     margin-right: 20px;
     margin-left: 0;
     margin-top: 0;
-    background: url("https://github.com/CryptoCashBack-Hub/CCBC_Guides/blob/master/WalletBackground/Live/walletFrame.png");
-    /*background-image: url(':/images/walletFrame.png');*/
+    background-image: url(':/images/walletFrame.png');
     background-repeat: none;
 }
 
