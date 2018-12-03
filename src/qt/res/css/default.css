@@ -1445,28 +1445,24 @@ QWidget .QFrame#frame .QLabel#label_Supply_value { /* Coin Supply amount */
 /********************************************************************************/
 /****************************URL LINKS******************************************/
 /******************************************************************************/
+
 QWidget .QFrame#frame .QPushButton#pushButton_Website { /*Website Button*/
-    background-color: transparent;
     background-image: url(':/icons/website.png');
 }
 
 QWidget .QFrame#frame .QPushButton#pushButton_Discord { /*Discord Button*/
-    background-color: transparent;
     background-image: url(':/icons/discord.png');
 }
 
 QWidget .QFrame#frame .QPushButton#pushButton_Github { /*Github Button*/
-    background-color: transparent;
     background-image: url(':/icons/github.png');
 }
 
 QWidget .QFrame#frame .QPushButton#pushButton_Twitter { /*Twitter Button*/
-    background-color: transparent;
     background-image: url(':/icons/twitter.png');
 }
 
 QWidget .QFrame#frame .QPushButton#pushButton_Explorer { /*Explorer Button*/
-    background-color: transparent;
     background-image: url(':/icons/explorer.png');
 }
 
