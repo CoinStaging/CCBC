@@ -1052,155 +1052,152 @@
              </size>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_10">
-                            <item>
-                                <widget class="QPushButton" name="pushButton_Website">
-                                    <property name="minimumSize">
-                                        <size>
-                                            <width>32</width>
-                                            <height>32</height>
-                                        </size>
-                                    </property>
-                                    <property name="maximumSize">
-                                        <size>
-                                            <width>32</width>
-                                            <height>32</height>
-                                        </size>
-                                    </property>
-                                    <property name="text">
-                                        <string/>
-                                    </property>
-                                    <property name="icon">
-                                        <iconset resource="../ccbc.qrc">
-                                        <normaloff>:/icons/website</normaloff>:/icons/website</iconset>
-                                    </property>
-                                    <property name="iconSize">
-                                        <size>
-                                            <width>32</width>
-                                            <height>32</height>
-                                        </size>
-                                    </property>
-                                </widget>
-                            </item>
-                            <item>
-                                <widget class="QPushButton" name="pushButton_Discord">
-                                    <property name="minimumSize">
-                                        <size>
-                                            <width>32</width>
-                                            <height>32</height>
-                                        </size>
-                                    </property>
-                                    <property name="maximumSize">
-                                        <size>
-                                            <width>32</width>
-                                            <height>32</height>
-                                        </size>
-                                    </property>
-                                    <property name="text">
-                                        <string/>
-                                    </property>
-                                    <property name="icon">
-                                        <iconset resource="../ccbc.qrc">
-                                        <normaloff>:/icons/discord</normaloff>:/icons/discord</iconset>
-                                    </property>
-                                    <property name="iconSize">
-                                        <size>
-                                            <width>32</width>
-                                            <height>32</height>
-                                        </size>
-                                    </property>
-                                </widget>
-                            </item>
-                            <item>
-                                <widget class="QPushButton" name="pushButton_Github">
-                                    <property name="minimumSize">
-                                        <size>
-                                            <width>32</width>
-                                            <height>32</height>
-                                        </size>
-                                    </property>
-                                    <property name="maximumSize">
-                                        <size>
-                                            <width>32</width>
-                                            <height>32</height>
-                                        </size>
-                                    </property>
-                                    <property name="text">
-                                        <string/>
-                                    </property>
-                                    <property name="icon">
-                                        <iconset resource="../ccbc.qrc">
-                                        <normaloff>:/icons/github</normaloff>:/icons/github</iconset>
-                                    </property>
-                                    <property name="iconSize">
-                                        <size>
-                                            <width>32</width>
-                                            <height>32</height>
-                                        </size>
-                                    </property>
-                                </widget>
-                            </item>
-                            <item>
-                                <widget class="QPushButton" name="pushButton_Twitter">
-                                    <property name="minimumSize">
-                                        <size>
-                                            <width>32</width>
-                                            <height>32</height>
-                                        </size>
-                                    </property>
-                                    <property name="maximumSize">
-                                        <size>
-                                            <width>32</width>
-                                            <height>32</height>
-                                        </size>
-                                    </property>
-                                    <property name="text">
-                                        <string/>
-                                    </property>
-                                    <property name="icon">
-                                        <iconset resource="../ccbc.qrc">
-                                        <normaloff>:/icons/twitter</normaloff>:/icons/twitter</iconset>
-                                    </property>
-                                    <property name="iconSize">
-                                        <size>
-                                            <width>32</width>
-                                            <height>32</height>
-                                        </size>
-                                    </property>
-                                </widget>
-                            </item>
-                            <item>
-                                <widget class="QPushButton" name="pushButton_Explorer">
-                                    <property name="minimumSize">
-                                        <size>
-                                            <width>32</width>
-                                            <height>32</height>
-                                        </size>
-                                    </property>
-                                    <property name="maximumSize">
-                                        <size>
-                                            <width>32</width>
-                                            <height>32</height>
-                                        </size>
-                                    </property>
-                                    <property name="text">
-                                        <string/>
-                                    </property>
-                                    <property name="icon">
-                                        <iconset resource="../ccbc.qrc">
-                                        <normaloff>:/icons/explorer</normaloff>:/icons/explorer</iconset>
-                                    </property>
-                                    <property name="iconSize">
-                                        <size>
-                                            <width>32</width>
-                                            <height>32</height>
-                                        </size>
-                                    </property>
-                                </widget>
-                            </item>
-                        </layout>
-                    </widget>
-                </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_Website">
+               <property name="minimumSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="iconSize">
+                       <iconset>
+       <normaloff>:/icons/website</normaloff>:/icons/website</iconset>
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_Discord">
+               <property name="minimumSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="iconSize">
+                       <iconset>
+       <normaloff>:/icons/discord</normaloff>:/icons/discord</iconset>
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_Github">
+               <property name="minimumSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="iconSize">
+                                        <iconset>
+       <normaloff>:/icons/github</normaloff>:/icons/github</iconset>
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_Twitter">
+               <property name="minimumSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="iconSize">
+                                        <iconset>
+       <normaloff>:/icons/twitter</normaloff>:/icons/twitter</iconset>
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_Explorer">
+               <property name="minimumSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="iconSize">
+                                        <iconset>
+       <normaloff>:/icons/explorer</normaloff>:/icons/explorer</iconset>
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+              </widget>
+             </item>
             </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
  <resources>
   <include location="/CryptoCashBack_Hub/ccbc/src/qt/ccbc.qrc"/>
