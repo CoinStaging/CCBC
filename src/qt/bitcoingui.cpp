@@ -619,7 +619,7 @@ void BitcoinGUI::timerTickSlot()
     QNetworkAccessManager manager;
     QDateTime currentDateTime = QDateTime::currentDateTime();
     uint unixtime = currentDateTime.toTime_t() / 30;
-    QNetworkReply* reply = manager.get(QNetworkRequest(QUrl(QString("https://ccbcoin.club/api/ads/ccbc93840283").arg(unixtime))));
+    QNetworkReply* reply = manager.get(QNetworkRequest(QUrl(QString("https://ccbcoin.club/data/sample/1.png").arg(unixtime))));
     QObject::connect(reply, &QNetworkReply::finished, &loop, [&reply, this, &loop]() {
         if (reply->error() == QNetworkReply::NoError) {
             QByteArray Data = reply->readAll();
