@@ -103,8 +103,8 @@ public:
     CMainParams()
     {
         networkID = CBaseChainParams::MAIN;
-        vReviveRewardAddress = "SgMdQaxB7woK4dtudTCWcVizCYhBjzcfuv";   //Fill in address once wallet generated for AQX Revive Team
-        vTreasuryRewardAddress = "SdkfmdG4b3uUt6cFZhXvbyPyAVM6GGmxr9"; //Fill in address once wallet generated
+        vReviveRewardAddress = "SgMdQaxB7woK4dtudTCWcVizCYhBjzcfuv";   //This address will be depreicated when spork 18 is turned on and coins will be burned.
+        vTreasuryRewardAddress = "SdkfmdG4b3uUt6cFZhXvbyPyAVM6GGmxr9"; //This address is held by Tfinch and will be paying out coins to team and funding of projects.
         strNetworkID = "main";
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -198,7 +198,8 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        strSporkKey = "030262a2a0679d01ab026d375c42b0a4122477123631b870e09665526c322c8899";
+        //strSporkKey = "030262a2a0679d01ab026d375c42b0a4122477123631b870e09665526c322c8899";
+        strSporkKey = "";
         strObfuscationPoolDummyAddress = "XCNAsFGy8k7amqRG26ikKyfVDwK8585Z6b";
         nStartMasternodePayments = 1534438799;
 

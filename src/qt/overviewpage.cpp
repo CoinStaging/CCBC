@@ -486,6 +486,9 @@ void OverviewPage::showOutOfSyncWarning(bool fShow)
     ui->labelTransactionsStatus->setVisible(fShow);
 }
 
+//Button will be released in next update when they are fine tuned.
+
+/*
 void OverviewPage::pushButton_Website()
 {
     QDesktopServices::openUrl(QUrl("https://ccbcoin.club/", QUrl::TolerantMode));
@@ -510,3 +513,4 @@ void OverviewPage::pushButton_Twitter()
 {
     QDesktopServices::openUrl(QUrl("https://twitter.com/CCBcoin", QUrl::TolerantMode));
 }
+*/

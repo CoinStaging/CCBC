@@ -2150,7 +2150,7 @@ int64_t GetBlockValue(int nHeight)
             nSubsidy = 25 * COIN;
         } else if (nHeight <= 556800 && nHeight > 297600) { //180 days            2,592,000 coins
             nSubsidy = 10 * COIN;
-        } else if (nHeight <= 556800) { //Till max supply           Total coins used 17,882,000
+        } else if (nHeight > 556800) { //Till max supply           Total coins used 17,882,000
             nSubsidy = 5 * COIN;        //57,026.38 days will max supply is reached
         }
 
@@ -2440,7 +2440,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
         ret = blockValue / 10 * 8.5; //85%
     } else if (nHeight <= 175000 && nHeight > 150000) {
         ret = blockValue / 10 * 9; //90%
-    } else {
+    } else if (nHeight > 175000) {
         return GetSeeSaw(blockValue, nMasternodeCount, nHeight); // Start of seesaw rewards
     }
 
@@ -2451,14 +2451,22 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 int nStartTreasuryBlock = 60000;
 int nTreasuryBlockStep = 1440;
 //Checks to see if block count above is correct if not then no Treasury
+//Put spork toggle to turn on and off.
 bool IsTreasuryBlock(int nHeight)
 {
+    if (IsSporkActive(SPORK_17_TREASURY_PAYMENT_ENFORCEMENT_DEFAULT && nHeight >= nStartTreasuryBlock)
+        return true;
+    else
+        return false
+
+    /*
     if (nHeight < nStartTreasuryBlock)
         return false;
     else if ((nHeight - nStartTreasuryBlock) % nTreasuryBlockStep == 0)
         return true;
     else
         return false;
+	*/
 }
 
 int64_t GetTreasuryAward(int nHeight)
@@ -2476,7 +2484,7 @@ int64_t GetTreasuryAward(int nHeight)
             return 1800 * COIN; //1,800 aday at 5% 12.5 coins per block
         } else if (nHeight < 556800 && nHeight > 297600) {
             return 720 * COIN; //720 aday at 5% 5 coins per block
-        } else if (nHeight < 556800) {
+        } else if (nHeight > 556800) {
             return 360 * COIN; //720 aday at 5% 2.5 coins per block
         } else {
             return 3600;
@@ -2491,12 +2499,24 @@ int nReviveBlockStep = 1440;
 //Checks to see if block count above is correct if not then no Revive
 bool IsReviveBlock(int nHeight)
 {
+
+	  if (IsSporkActive(SPORK_18_REVIVE_PAYMENT_ENFORCEMENT_DEFAULT) && nHeight >= nStartReviveBlock)
+			return true;
+	  else
+			return false;
+		
+	// Old fee for AQX before admin gave up on project
+	// CCBC will not pay for revival fee since CCBC dev did all work
+	// And AQX team didnt help like promised.
+
+	/*
     if (nHeight < nStartReviveBlock)
         return false;
     else if ((nHeight - nStartReviveBlock) % nReviveBlockStep == 0)
         return true;
     else
         return false;
+	*/
 }
 
 int64_t GetReviveAward(int nHeight)
@@ -2514,7 +2534,7 @@ int64_t GetReviveAward(int nHeight)
             return 1800 * COIN; //1,800 aday at 5% 12.5 coins per block
         } else if (nHeight < 556800 && nHeight > 297600) {
             return 720 * COIN; //720 aday at 5% 5 coins per block
-        } else if (nHeight < 556800) {
+        } else if (nHeight > 556800) {
             return 360 * COIN; //720 aday at 5% 2.5 coins per block
         } else {
             return 3600;
