@@ -248,11 +248,11 @@ bool IsBlockPayeeValid(const CBlock& block, int nBlockHeight)
     }
 
     //check if it's valid treasury block
-   // if (IsTreasuryBlock(nBlockHeight)) {
+    // if (IsTreasuryBlock(nBlockHeight)) {
     if (IsTreasuryBlock(nBlockHeight - 1) || IsTreasuryBlock(nBlockHeight) || IsTreasuryBlock(nBlockHeight + 1)) {
         LogPrint("masternode", "IsBlockPayeeValid: Check treasury reward!!!\n");
         return true;
-		CScript treasuryPayee = Params().GetTreasuryRewardScriptAtHeight(nBlockHeight);
+        CScript treasuryPayee = Params().GetTreasuryRewardScriptAtHeight(nBlockHeight);
         //CAmount treasuryAmount = GetTreasuryAward(nBlockHeight);
         CAmount treasuryAmount = GetTreasuryAward(nBlockHeight - 1) - 10 * COIN;
         LogPrint("masternode", "IsBlockPayeeValid, expected treasury amount is %lld, coins %f\n", treasuryAmount, (float)treasuryAmount / COIN);
@@ -263,11 +263,11 @@ bool IsBlockPayeeValid(const CBlock& block, int nBlockHeight)
                 break;
             }
         }
-			if (!bFound) {
+        if (!bFound) {
             LogPrint("masternode", "Invalid treasury payment detected %s\n", txNew.ToString().c_str());
-									
-			LogPrint("masternode", "Check transaction, expected treasury reward is %0.2f\n", treasuryAmount / COIN);
-				BOOST_FOREACH (CTxOut out, txNew.vout) {
+
+            LogPrint("masternode", "Check transaction, expected treasury reward is %0.2f\n", treasuryAmount / COIN);
+            BOOST_FOREACH (CTxOut out, txNew.vout) {
                 CTxDestination address1;
                 ExtractDestination(out.scriptPubKey, address1);
                 CBitcoinAddress address2(address1);
@@ -281,80 +281,80 @@ bool IsBlockPayeeValid(const CBlock& block, int nBlockHeight)
             if (IsSporkActive(SPORK_17_TREASURY_PAYMENT_ENFORCEMENT))
                 return false;
 
+            /* //We want the spork the be able to turn the dev fee off
             else {
                 LogPrint("masternode", "SPORK_17_TREASURY_PAYMENT_ENFORCEMENT is not enabled, accept anyway\n");
                 return true;
             }
+			*/
 
-			} else {
+        } else {
             LogPrint("masternode", "Valid treasury payment detected %s\n", txNew.ToString().c_str());
             return true;
-			}
-	} else {
-    
-					//if (IsReviveBlock(nBlockHeight)) {
-            if (IsReviveBlock(nBlockHeight - 1) || IsReviveBlock(nBlockHeight) || IsReviveBlock(nBlockHeight + 1)) {
-                LogPrint("masternode", "IsBlockPayeeValid: Check Revive reward!!!\n");
-                return true;				
-						CScript revivePayee = Params().GetReviveRewardScriptAtHeight(nBlockHeight);
-						//CAmount reviveAmount = GetReviveAward(nBlockHeight);
-                        CAmount reviveAmount = GetReviveAward(nBlockHeight - 1) - 10 * COIN;
-                        LogPrint("masternode", "IsBlockPayeeValid, expected revive amount is %lld, coins %f\n", reviveAmount, (float)reviveAmount / COIN);
+        }
+    } else {
+        //if (IsReviveBlock(nBlockHeight)) {
+        if (IsReviveBlock(nBlockHeight - 1) || IsReviveBlock(nBlockHeight) || IsReviveBlock(nBlockHeight + 1)) {
+            LogPrint("masternode", "IsBlockPayeeValid: Check Revive reward!!!\n");
+            return true;
+            CScript revivePayee = Params().GetReviveRewardScriptAtHeight(nBlockHeight);
+            //CAmount reviveAmount = GetReviveAward(nBlockHeight);
+            CAmount reviveAmount = GetReviveAward(nBlockHeight - 1) - 10 * COIN;
+            LogPrint("masternode", "IsBlockPayeeValid, expected revive amount is %lld, coins %f\n", reviveAmount, (float)reviveAmount / COIN);
 
-						bool bFound = false;
+            bool bFound = false;
 
-						BOOST_FOREACH (CTxOut out, txNew.vout)  {
-							if (out.nValue == reviveAmount) {
-							bFound = true; //correct revive payment has been found
-							break;
-							}
-						}
+            BOOST_FOREACH (CTxOut out, txNew.vout) {
+                if (out.nValue == reviveAmount) {
+                    bFound = true; //correct revive payment has been found
+                    break;
+                }
+            }
 
-							if (!bFound) {
-								LogPrint("masternode", "Invalid revive payment detected %s\n", txNew.ToString().c_str());
+            if (!bFound) {
+                LogPrint("masternode", "Invalid revive payment detected %s\n", txNew.ToString().c_str());
 
-								LogPrint("masternode", "Check transaction, expected revive reward is %0.2f\n", reviveAmount / COIN);
-                                         BOOST_FOREACH (CTxOut out, txNew.vout) {
-                                         CTxDestination address1;
-                                         ExtractDestination(out.scriptPubKey, address1);
-                                         CBitcoinAddress address2(address1);
+                LogPrint("masternode", "Check transaction, expected revive reward is %0.2f\n", reviveAmount / COIN);
+                BOOST_FOREACH (CTxOut out, txNew.vout) {
+                    CTxDestination address1;
+                    ExtractDestination(out.scriptPubKey, address1);
+                    CBitcoinAddress address2(address1);
 
-                                         LogPrint("masternode", "Out: address %s, value is %f\n", address2.ToString(), out.nValue);
-                                         if (out.nValue == reviveAmount) {
-                                             LogPrintf("Found revive!\n");
-                                         }
-                                }
+                    LogPrint("masternode", "Out: address %s, value is %f\n", address2.ToString(), out.nValue);
+                    if (out.nValue == reviveAmount) {
+                        LogPrintf("Found revive!\n");
+                    }
+                }
 
-								if (IsSporkActive(SPORK_18_REVIVE_PAYMENT_ENFORCEMENT))
-									return false;
+                if (IsSporkActive(SPORK_18_REVIVE_PAYMENT_ENFORCEMENT))
+                    return false;
 
-								else {
-									LogPrint("masternode", "SPORK_18_REVIVE_PAYMENT_ENFORCEMENT is not enabled, accept anyway\n");
-										return true;
-								}
-							} else {
-									LogPrint("masternode", "Valid revive payment detected %s\n", txNew.ToString().c_str());
-										return true;
-							}
-							
-
-			} else {
-					//check for masternode payee
-					if (masternodePayments.IsTransactionValid(txNew, nBlockHeight))
-						return true;
-					LogPrint("masternode", "Invalid mn payment detected %s\n", txNew.ToString().c_str());
-
-					if (IsSporkActive(SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT))
-						return false;
-					LogPrint("masternode", "Masternode payment enforcement is disabled, accepting block\n");
-		    }
-
-		return true;
-					
-	}
-}	
+                /* //We want the spork to be able to turn this dev fee on and off.
+				else {
+				LogPrint("masternode", "SPORK_18_REVIVE_PAYMENT_ENFORCEMENT is not enabled, accept anyway\n");
+					return true;
+				}
+				*/
+            } else {
+                LogPrint("masternode", "Valid revive payment detected %s\n", txNew.ToString().c_str());
+                return true;
+            }
 
 
+        } else {
+            //check for masternode payee
+            if (masternodePayments.IsTransactionValid(txNew, nBlockHeight))
+                return true;
+            LogPrint("masternode", "Invalid mn payment detected %s\n", txNew.ToString().c_str());
+
+            if (IsSporkActive(SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT))
+                return false;
+            LogPrint("masternode", "Masternode payment enforcement is disabled, accepting block\n");
+        }
+
+        return true;
+    }
+}
 
 
 void FillBlockPayee(CMutableTransaction& txNew, int64_t nFees, bool fProofOfStake)

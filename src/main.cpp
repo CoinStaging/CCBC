@@ -2454,10 +2454,15 @@ int nTreasuryBlockStep = 1440;
 //Put spork toggle to turn on and off.
 bool IsTreasuryBlock(int nHeight)
 {
-    if (IsSporkActive(SPORK_17_TREASURY_PAYMENT_ENFORCEMENT_DEFAULT && nHeight >= nStartTreasuryBlock)
+	//This is put in for when dev fee is turned off.
+    if (nHeight < nStartTreasuryBlock)
+        return false;
+    else if (IsSporkActive(SPORK_17_TREASURY_PAYMENT_ENFORCEMENT))
+        return false;
+    else if ((nHeight - nStartTreasuryBlock) % nTreasuryBlockStep == 0)
         return true;
     else
-        return false
+        return false;
 
     /*
     if (nHeight < nStartTreasuryBlock)
@@ -2500,15 +2505,19 @@ int nReviveBlockStep = 1440;
 bool IsReviveBlock(int nHeight)
 {
 
-	  if (IsSporkActive(SPORK_18_REVIVE_PAYMENT_ENFORCEMENT_DEFAULT) && nHeight >= nStartReviveBlock)
-			return true;
-	  else
-			return false;
-		
 	// Old fee for AQX before admin gave up on project
-	// CCBC will not pay for revival fee since CCBC dev did all work
-	// And AQX team didnt help like promised.
+    // CCBC will not pay for revival fee since CCBC dev did all work
+    // And AQX team didnt help like promised.
 
+    if (nHeight < nStartReviveBlock)
+        return false;
+    else if (IsSporkActive(SPORK_18_REVIVE_PAYMENT_ENFORCEMENT))
+        return false;
+    else if ((nHeight - nStartReviveBlock) % nReviveBlockStep == 0)
+        return true;
+    else
+        return false;
+		
 	/*
     if (nHeight < nStartReviveBlock)
         return false;
