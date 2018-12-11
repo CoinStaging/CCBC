@@ -2146,12 +2146,12 @@ int64_t GetBlockValue(int nHeight)
             nSubsidy = 75 * COIN;
         } else if (nHeight <= 168000 && nHeight > 125000) { //30 days             2,150,000 coins
             nSubsidy = 50 * COIN;
-        } else if (nHeight <= 297600 && nHeight > 168000) { //90 days             3,240,000 coins
-            nSubsidy = 25 * COIN;
-        } else if (nHeight <= 556800 && nHeight > 297600) { //180 days            2,592,000 coins
+        } else if (nHeight <= 200000 && nHeight > 168000) { 
             nSubsidy = 10 * COIN;
-        } else if (nHeight > 556800) { //Till max supply           Total coins used 17,882,000
-            nSubsidy = 5 * COIN;        //57,026.38 days will max supply is reached
+        } else if (nHeight <= 250000 && nHeight > 200000) {
+            nSubsidy = 5 * COIN;
+        } else if (nHeight > 250000) {
+            nSubsidy = 2 * COIN;        
         }
 
         int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
