@@ -93,7 +93,8 @@ multisigSignAction(0),
 aboutAction(0),
 receiveCoinsAction(0),
 privacyAction(0),
-optionsAction(0),
+                                                                            statsAction(0),
+                                                                            optionsAction(0),
 toggleHideAction(0),
 encryptWalletAction(0),
 backupWalletAction(0),
@@ -372,6 +373,7 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
 	connect(receiveCoinsAction, SIGNAL(triggered()), this, SLOT(gotoReceiveCoinsPage()));
 	connect(privacyAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
 	connect(privacyAction, SIGNAL(triggered()), this, SLOT(gotoPrivacyPage()));
+    connect(statsAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(statsAction, SIGNAL(triggered()), this, SLOT(gotoStatsPage()));
 	connect(historyAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
 	connect(historyAction, SIGNAL(triggered()), this, SLOT(gotoHistoryPage()));
