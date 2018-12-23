@@ -93,8 +93,8 @@ multisigSignAction(0),
 aboutAction(0),
 receiveCoinsAction(0),
 privacyAction(0),
-                                                                            statsAction(0),
-                                                                            optionsAction(0),
+statsAction(0),
+optionsAction(0),
 toggleHideAction(0),
 encryptWalletAction(0),
 backupWalletAction(0),
@@ -335,7 +335,7 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
 	tabGroup->addAction(historyAction);
 
 	privacyAction = new QAction(QIcon(":/icons/privacy"), tr("&Privacy"), this);
-	privacyAction->setStatusTip(tr("Privacy Actions for zSMRTC"));
+	privacyAction->setStatusTip(tr("Privacy Actions for"));
 	privacyAction->setToolTip(privacyAction->statusTip());
 	privacyAction->setCheckable(true);
 #ifdef Q_OS_MAC
@@ -344,6 +344,17 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
 	privacyAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
 #endif
 	tabGroup->addAction(privacyAction);
+
+		statsAction = new QAction(QIcon(":/icons/stats"), tr("&Stats"), this);
+        statsAction->setStatusTip(tr("Stats Actions"));
+        statsAction->setToolTip(statsAction->statusTip());
+        statsAction->setCheckable(true);
+#ifdef Q_OS_MAC
+        statsAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_5));
+#else
+        statsAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
+#endif
+        tabGroup->addAction(statsAction);
 
 #ifdef ENABLE_WALLET
 
@@ -561,6 +572,7 @@ void BitcoinGUI::createToolBars()
         toolbar->addAction(receiveCoinsAction);
         toolbar->addAction(historyAction);
 		toolbar->addAction(privacyAction);
+        toolbar->addAction(statsAction);
         QSettings settings;
         if (settings.value("fShowMasternodesTab").toBool()) {
             toolbar->addAction(masternodeAction);
@@ -655,6 +667,7 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
 	sendCoinsAction->setEnabled(enabled);
 	receiveCoinsAction->setEnabled(enabled);
 	privacyAction->setEnabled(enabled);
+    statsAction->setEnabled(enabled);
 	historyAction->setEnabled(enabled);
 	QSettings settings;
 	if (settings.value("fShowMasternodesTab").toBool()) {
@@ -712,6 +725,7 @@ void BitcoinGUI::createTrayIconMenu()
 	trayIconMenu->addAction(sendCoinsAction);
 	trayIconMenu->addAction(receiveCoinsAction);
 	trayIconMenu->addAction(privacyAction);
+    trayIconMenu->addAction(statsAction);
 	trayIconMenu->addSeparator();
 	trayIconMenu->addAction(signMessageAction);
 	trayIconMenu->addAction(verifyMessageAction);

@@ -107,6 +107,7 @@ private:
     QAction* aboutAction;
     QAction* receiveCoinsAction;
     QAction* privacyAction;
+    QAction* statsAction;
     QAction* optionsAction;
     QAction* toggleHideAction;
     QAction* encryptWalletAction;
