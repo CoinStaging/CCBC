@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2018 The CCBC developers
+// Copyright (c) 2018 The DOD developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -238,10 +238,10 @@ Value stop(const Array& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop Ccbc server.");
+            "\nStop Dod server.");
     // Shutdown will take long enough that the response should get back
     StartShutdown();
-    return "Ccbc server stopping";
+    return "Dod server stopping";
 }
 
 
@@ -318,36 +318,36 @@ static const CRPCCommand vRPCCommands[] =
         {"hidden", "reconsiderblock", &reconsiderblock, true, true, false},
         {"hidden", "setmocktime", &setmocktime, true, false, false},
 
-        /* Ccbc features */
-        {"ccbc", "masternode", &masternode, true, true, false},
-        {"ccbc", "listmasternodes", &listmasternodes, true, true, false},
-        {"ccbc", "getmasternodecount", &getmasternodecount, true, true, false},
-        {"ccbc", "masternodeconnect", &masternodeconnect, true, true, false},
-        {"ccbc", "masternodecurrent", &masternodecurrent, true, true, false},
-        {"ccbc", "masternodedebug", &masternodedebug, true, true, false},
-        {"ccbc", "startmasternode", &startmasternode, true, true, false},
-        {"ccbc", "createmasternodekey", &createmasternodekey, true, true, false},
-        {"ccbc", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
-        {"ccbc", "listmasternodeconf", &listmasternodeconf, true, true, false},
-        {"ccbc", "getmasternodestatus", &getmasternodestatus, true, true, false},
-        {"ccbc", "getmasternodewinners", &getmasternodewinners, true, true, false},
-        {"ccbc", "getmasternodescores", &getmasternodescores, true, true, false},
-        {"ccbc", "mnbudget", &mnbudget, true, true, false},
-        {"ccbc", "preparebudget", &preparebudget, true, true, false},
-        {"ccbc", "submitbudget", &submitbudget, true, true, false},
-        {"ccbc", "mnbudgetvote", &mnbudgetvote, true, true, false},
-        {"ccbc", "getbudgetvotes", &getbudgetvotes, true, true, false},
-        {"ccbc", "getnextsuperblock", &getnextsuperblock, true, true, false},
-        {"ccbc", "getbudgetprojection", &getbudgetprojection, true, true, false},
-        {"ccbc", "getbudgetinfo", &getbudgetinfo, true, true, false},
-        {"ccbc", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
-        {"ccbc", "mnfinalbudget", &mnfinalbudget, true, true, false},
-        {"ccbc", "checkbudgets", &checkbudgets, true, true, false},
-        {"ccbc", "mnsync", &mnsync, true, true, false},
-        {"ccbc", "spork", &spork, true, true, false},
-        {"ccbc", "getpoolinfo", &getpoolinfo, true, true, false},
+        /* Dod features */
+        {"dod", "masternode", &masternode, true, true, false},
+        {"dod", "listmasternodes", &listmasternodes, true, true, false},
+        {"dod", "getmasternodecount", &getmasternodecount, true, true, false},
+        {"dod", "masternodeconnect", &masternodeconnect, true, true, false},
+        {"dod", "masternodecurrent", &masternodecurrent, true, true, false},
+        {"dod", "masternodedebug", &masternodedebug, true, true, false},
+        {"dod", "startmasternode", &startmasternode, true, true, false},
+        {"dod", "createmasternodekey", &createmasternodekey, true, true, false},
+        {"dod", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
+        {"dod", "listmasternodeconf", &listmasternodeconf, true, true, false},
+        {"dod", "getmasternodestatus", &getmasternodestatus, true, true, false},
+        {"dod", "getmasternodewinners", &getmasternodewinners, true, true, false},
+        {"dod", "getmasternodescores", &getmasternodescores, true, true, false},
+        {"dod", "mnbudget", &mnbudget, true, true, false},
+        {"dod", "preparebudget", &preparebudget, true, true, false},
+        {"dod", "submitbudget", &submitbudget, true, true, false},
+        {"dod", "mnbudgetvote", &mnbudgetvote, true, true, false},
+        {"dod", "getbudgetvotes", &getbudgetvotes, true, true, false},
+        {"dod", "getnextsuperblock", &getnextsuperblock, true, true, false},
+        {"dod", "getbudgetprojection", &getbudgetprojection, true, true, false},
+        {"dod", "getbudgetinfo", &getbudgetinfo, true, true, false},
+        {"dod", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
+        {"dod", "mnfinalbudget", &mnfinalbudget, true, true, false},
+        {"dod", "checkbudgets", &checkbudgets, true, true, false},
+        {"dod", "mnsync", &mnsync, true, true, false},
+        {"dod", "spork", &spork, true, true, false},
+        {"dod", "getpoolinfo", &getpoolinfo, true, true, false},
 #ifdef ENABLE_WALLET
-        {"ccbc", "obfuscation", &obfuscation, false, false, true}, /* not threadSafe because of SendMoney */
+        {"dod", "obfuscation", &obfuscation, false, false, true}, /* not threadSafe because of SendMoney */
 
         /* Wallet */
         {"wallet", "addmultisigaddress", &addmultisigaddress, true, false, true},
@@ -626,16 +626,16 @@ void StartRPCThreads()
         unsigned char rand_pwd[32];
         GetRandBytes(rand_pwd, 32);
         uiInterface.ThreadSafeMessageBox(strprintf(
-                                             _("To use ccbcd, or the -server option to ccbc-qt, you must set an rpcpassword in the configuration file:\n"
+                                             _("To use dodd, or the -server option to dod-qt, you must set an rpcpassword in the configuration file:\n"
                                                "%s\n"
                                                "It is recommended you use the following random password:\n"
-                                               "rpcuser=ccbcrpc\n"
+                                               "rpcuser=dodrpc\n"
                                                "rpcpassword=%s\n"
                                                "(you do not need to remember this password)\n"
                                                "The username and password MUST NOT be the same.\n"
                                                "If the file does not exist, create it with owner-readable-only file permissions.\n"
                                                "It is also recommended to set alertnotify so you are notified of problems;\n"
-                                               "for example: alertnotify=echo %%s | mail -s \"Ccbc Alert\" admin@foo.com\n"),
+                                               "for example: alertnotify=echo %%s | mail -s \"Dod Alert\" admin@foo.com\n"),
                                              GetConfigFile().string(),
                                              EncodeBase58(&rand_pwd[0], &rand_pwd[0] + 32)),
             "", CClientUIInterface::MSG_ERROR | CClientUIInterface::SECURE);
@@ -1086,14 +1086,14 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(string methodname, string args)
 {
-    return "> ccbc-cli " + methodname + " " + args + "\n";
+    return "> dod-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(string methodname, string args)
 {
     return "> curl --user myusername --data-binary '{\"jsonrpc\": \"1.0\", \"id\":\"curltest\", "
            "\"method\": \"" +
-           methodname + "\", \"params\": [" + args + "] }' -H 'content-type: text/plain;' http://127.0.0.1:15520/\n";
+           methodname + "\", \"params\": [" + args + "] }' -H 'content-type: text/plain;' http://127.0.0.1:12055/\n";
 }
 
 const CRPCTable tableRPC;

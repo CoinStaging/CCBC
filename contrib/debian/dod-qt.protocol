@@ -1,0 +1,11 @@
+[Protocol]
+exec=dod-qt '%u'
+protocol=dod
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

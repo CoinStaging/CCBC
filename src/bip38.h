@@ -1,4 +1,4 @@
-// Copyright (c) 2017 The CCBC developers
+// Copyright (c) 2017 The DOD developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 

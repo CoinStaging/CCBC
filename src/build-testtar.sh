@@ -1,1 +1,1 @@
-tar cvzf CCBC-linux-Testnet.tar.gz ccbcd ccbc-cli
+tar cvzf DOD-linux-Testnet.tar.gz dodd dod-cli

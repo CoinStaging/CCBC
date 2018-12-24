@@ -19,18 +19,18 @@ BitcoinUnits::BitcoinUnits(QObject* parent) : QAbstractListModel(parent),
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(CCBC);
-    unitlist.append(mCCBC);
-    unitlist.append(uCCBC);
+    unitlist.append(DOD);
+    unitlist.append(mDOD);
+    unitlist.append(uDOD);
     return unitlist;
 }
 
 bool BitcoinUnits::valid(int unit)
 {
     switch (unit) {
-    case CCBC:
-    case mCCBC:
-    case uCCBC:
+    case DOD:
+    case mDOD:
+    case uDOD:
         return true;
     default:
         return false;
@@ -40,12 +40,12 @@ bool BitcoinUnits::valid(int unit)
 QString BitcoinUnits::id(int unit)
 {
     switch (unit) {
-    case CCBC:
-        return QString("ccbc");
-    case mCCBC:
-        return QString("mccbc");
-    case uCCBC:
-        return QString::fromUtf8("uccbc");
+    case DOD:
+        return QString("dod");
+    case mDOD:
+        return QString("mdod");
+    case uDOD:
+        return QString::fromUtf8("udod");
     default:
         return QString("???");
     }
@@ -55,23 +55,23 @@ QString BitcoinUnits::name(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case CCBC:
-            return QString("CCBC");
-        case mCCBC:
-            return QString("mCCBC");
-        case uCCBC:
-            return QString::fromUtf8("μCCBC");
+        case DOD:
+            return QString("DOD");
+        case mDOD:
+            return QString("mDOD");
+        case uDOD:
+            return QString::fromUtf8("μDOD");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case CCBC:
-            return QString("tCCBC");
-        case mCCBC:
-            return QString("mtCCBC");
-        case uCCBC:
-            return QString::fromUtf8("μtCCBC");
+        case DOD:
+            return QString("tDOD");
+        case mDOD:
+            return QString("mtDOD");
+        case uDOD:
+            return QString::fromUtf8("μtDOD");
         default:
             return QString("???");
         }
@@ -82,23 +82,23 @@ QString BitcoinUnits::description(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case CCBC:
-            return QString("CCBC");
-        case mCCBC:
-            return QString("Milli-CCBC (1 / 1" THIN_SP_UTF8 "000)");
-        case uCCBC:
-            return QString("Micro-CCBC (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+        case DOD:
+            return QString("DOD");
+        case mDOD:
+            return QString("Milli-DOD (1 / 1" THIN_SP_UTF8 "000)");
+        case uDOD:
+            return QString("Micro-DOD (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case CCBC:
-            return QString("TestCCBCs");
-        case mCCBC:
-            return QString("Milli-TestCCBC (1 / 1" THIN_SP_UTF8 "000)");
-        case uCCBC:
-            return QString("Micro-TestCCBC (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+        case DOD:
+            return QString("TestDODs");
+        case mDOD:
+            return QString("Milli-TestDOD (1 / 1" THIN_SP_UTF8 "000)");
+        case uDOD:
+            return QString("Micro-TestDOD (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
@@ -108,11 +108,11 @@ QString BitcoinUnits::description(int unit)
 qint64 BitcoinUnits::factor(int unit)
 {
     switch (unit) {
-    case CCBC:
+    case DOD:
         return 100000000;
-    case mCCBC:
+    case mDOD:
         return 100000;
-    case uCCBC:
+    case uDOD:
         return 100;
     default:
         return 100000000;
@@ -122,11 +122,11 @@ qint64 BitcoinUnits::factor(int unit)
 int BitcoinUnits::decimals(int unit)
 {
     switch (unit) {
-    case CCBC:
+    case DOD:
         return 8;
-    case mCCBC:
+    case mDOD:
         return 5;
-    case uCCBC:
+    case uDOD:
         return 2;
     default:
         return 0;

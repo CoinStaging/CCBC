@@ -9,8 +9,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between ccbc-cli and ccbcd)
- * of a given instance of the Ccbc system.
+ * CBaseChainParams defines the base parameters (shared between dod-cli and dodd)
+ * of a given instance of the Dod system.
  */
 class CBaseChainParams
 {

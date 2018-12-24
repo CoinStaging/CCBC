@@ -1,8 +1,8 @@
-// Copyright (c) 2017 The CCBC developers
+// Copyright (c) 2017 The DOD developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef CCBC_ACCUMULATORMAP_H
-#define CCBC_ACCUMULATORMAP_H
+#ifndef DOD_ACCUMULATORMAP_H
+#define DOD_ACCUMULATORMAP_H
 
 #include "libzerocoin/Accumulator.h"
 #include "libzerocoin/Coin.h"
@@ -20,4 +20,4 @@ public:
     uint256 GetCheckpoint();
     void Reset();
 };
-#endif //CCBC_ACCUMULATORMAP_H
+#endif //DOD_ACCUMULATORMAP_H

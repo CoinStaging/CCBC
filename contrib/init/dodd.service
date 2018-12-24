@@ -1,0 +1,26 @@
+[Unit]
+Description=Dod's distributed currency daemon
+After=network.target
+
+[Service]
+User=dod
+Group=dod
+
+Type=forking
+PIDFile=/var/lib/dodd/dodd.pid
+
+ExecStart=/usr/bin/dodd -daemon -pid=/var/lib/dodd/dodd.pid \
+          -conf=/etc/dod/dod.conf -datadir=/var/lib/dodd
+
+ExecStop=-/usr/bin/dod-cli -conf=/etc/dod/dod.conf \
+         -datadir=/var/lib/dodd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

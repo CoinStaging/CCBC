@@ -1,2 +1,2 @@
-strip ccbc{d,-cli}
-tar cvzf CCBC-linux.tar.gz ccbcd ccbc-cli
+strip dod{d,-cli}
+tar cvzf DOD-linux.tar.gz dodd dod-cli

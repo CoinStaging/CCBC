@@ -35,14 +35,14 @@ If you want to build the disk image with `make deploy` (.dmg / optional), you ne
 Build SmartCloud Core
 ------------------------
 
-1. Clone the SmartCloud Core source code and cd into `ccbc`
+1. Clone the SmartCloud Core source code and cd into `dod`
 
-        git clone https://github.com/SMRT-Cloud/ccbc.git
-        cd ccbc
+        git clone https://github.com/SMRT-Cloud/dod.git
+        cd dod
 
-2.  Build ccbc Core:
+2.  Build dod Core:
 
-    Configure and build the headless ccbc Core binaries as well as the GUI (if Qt is found).
+    Configure and build the headless dod Core binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
 
@@ -66,26 +66,26 @@ Build SmartCloud Core
 Running
 -------
 
-ccbc Core is now available at `./src/ccbcd`
+dod Core is now available at `./src/dodd`
 
 Before running, it's recommended that you create an RPC configuration file.
 
-    echo -e "rpcuser=ccbcrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/ccbc/ccbc.conf"
+    echo -e "rpcuser=dodrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/dod/dod.conf"
 
-    chmod 600 "/Users/${USER}/Library/Application Support/ccbc/ccbc.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/dod/dod.conf"
 
-The first time you run ccbcd, it will start downloading the blockchain. This process could take several hours.
+The first time you run dodd, it will start downloading the blockchain. This process could take several hours.
 
 You can monitor the download process by looking at the debug.log file:
 
-    tail -f $HOME/Library/Application\ Support/ccbc/debug.log
+    tail -f $HOME/Library/Application\ Support/dod/debug.log
 
 Other commands:
 -------
 
-    ./src/ccbcd -daemon # Starts the ccbc daemon.
-    ./src/ccbc-cli --help # Outputs a list of command-line options.
-    ./src/ccbc-cli help # Outputs a list of RPC commands when the daemon is running.
+    ./src/dodd -daemon # Starts the dod daemon.
+    ./src/dod-cli --help # Outputs a list of command-line options.
+    ./src/dod-cli help # Outputs a list of RPC commands when the daemon is running.
 
 Notes
 -----

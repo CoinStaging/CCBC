@@ -96,7 +96,7 @@ public:
 };
 
 /**
- * Ccbc RPC command dispatcher.
+ * Dod RPC command dispatcher.
  */
 class CRPCTable
 {

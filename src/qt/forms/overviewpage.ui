@@ -19,11 +19,11 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_2">
-   <item row="0" column="0">
+  <layout class="QVBoxLayout" name="topLayout">
+   <item>
     <widget class="QLabel" name="labelAlerts">
      <property name="visible">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop:0 #F0D0A0, stop:1 #F8D488); color:#000000;</string>
@@ -36,7 +36,7 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="0">
+   <item>
     <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1">
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -50,22 +50,6 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_4">
           <item>
-           <spacer name="verticalSpacer_4">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Fixed</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>75</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
            <layout class="QHBoxLayout" name="horizontalLayout_4">
             <item>
              <widget class="QLabel" name="label_5">
@@ -76,7 +60,7 @@
                </font>
               </property>
               <property name="text">
-               <string>CCBC Balances</string>
+               <string>DOD Balances</string>
               </property>
              </widget>
             </item>
@@ -86,7 +70,7 @@
                <cursorShape>WhatsThisCursor</cursorShape>
               </property>
               <property name="toolTip">
-               <string>The displayed information may be out of date. Your wallet automatically synchronizes with the CCBC network after a connection is established, but this process has not completed yet.</string>
+               <string>The displayed information may be out of date. Your wallet automatically synchronizes with the DOD network after a connection is established, but this process has not completed yet.</string>
               </property>
               <property name="styleSheet">
                <string notr="true">QLabel { color: red; }</string>
@@ -134,7 +118,7 @@
                <string>Unconfirmed transactions to watch-only addresses</string>
               </property>
               <property name="text">
-               <string notr="true">0.000 000 00 CCBC</string>
+               <string notr="true">0.000 000 00 DOD</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -159,7 +143,7 @@
                <string>Total of transactions that have yet to be confirmed, and do not yet count toward the spendable balance</string>
               </property>
               <property name="text">
-               <string notr="true">0.000 000 00 CCBC</string>
+               <string notr="true">0.000 000 00 DOD</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -184,7 +168,7 @@
                <string>Staked or masternode rewards in watch-only addresses that has not yet matured</string>
               </property>
               <property name="text">
-               <string notr="true">0.000 000 00 CCBC</string>
+               <string notr="true">0.000 000 00 DOD</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -242,7 +226,7 @@
                <string>Staked or masternode rewards that has not yet matured</string>
               </property>
               <property name="text">
-               <string notr="true">0.000 000 00 CCBC</string>
+               <string notr="true">0.000 000 00 DOD</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -287,7 +271,7 @@
                <string>Your current total balance</string>
               </property>
               <property name="text">
-               <string notr="true">0.000 000 00 CCBC</string>
+               <string notr="true">0.000 000 00 DOD</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -312,7 +296,7 @@
                <string>Current total balance in watch-only addresses</string>
               </property>
               <property name="text">
-               <string notr="true">0.000 000 00 CCBC</string>
+               <string notr="true">0.000 000 00 DOD</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -354,7 +338,7 @@
                <string>Your current spendable balance</string>
               </property>
               <property name="text">
-               <string notr="true">0.000 000 00 CCBC</string>
+               <string notr="true">0.000 000 00 DOD</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -379,7 +363,7 @@
                <string>Your current balance in watch-only addresses</string>
               </property>
               <property name="text">
-               <string notr="true">0.000 000 00 CCBC</string>
+               <string notr="true">0.000 000 00 DOD</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -407,6 +391,19 @@
              </widget>
             </item>
            </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
           </item>
          </layout>
         </widget>
@@ -966,7 +963,7 @@
                 <string>Total of transactions that have yet to be confirmed, and do not yet count toward the spendable balance</string>
                </property>
                <property name="text">
-                <string notr="true">0.000 000 00 CCBC</string>
+                <string notr="true">0.000 000 00 DOD</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -991,7 +988,7 @@
                 <string>Total Balance, including unconfirmed and immature coins.</string>
                </property>
                <property name="text">
-                <string notr="true">0.000 000 00 CCBC</string>
+                <string notr="true">0.000 000 00 DOD</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1024,7 +1021,7 @@
              <item row="1" column="0">
               <widget class="QLabel" name="labelBalanceTextz">
                <property name="text">
-                <string>CCBC:</string>
+                <string>DOD:</string>
                </property>
               </widget>
              </item>
@@ -1043,7 +1040,7 @@
                 <string>Your current spendable balance</string>
                </property>
                <property name="text">
-                <string notr="true">0.000 000 00 CCBC</string>
+                <string notr="true">0.000 000 00 DOD</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1059,17 +1056,15 @@
                 <string/>
                </property>
                <property name="text">
-                <string>zCCBC:</string>
+                <string>zDOD:</string>
                </property>
               </widget>
              </item>
              <item row="4" column="2">
-              <widget class="QLabel" name="labelzCCBCPercent">
+              <widget class="QLabel" name="labelzDODPercent">
                <property name="toolTip">
-                <string>
-                                  Current percentage of zCCBC.
-                                  If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%)
-                                </string>
+                <string>Current percentage of zDOD.
+If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%)</string>
                </property>
                <property name="text">
                 <string>0 %</string>
@@ -1092,10 +1087,10 @@
              <item row="2" column="1">
               <widget class="QLabel" name="labelLockedBalance">
                <property name="toolTip">
-                <string>Locked CCBC or Masternode collaterals. These are excluded from zCCBC minting.</string>
+                <string>Locked DOD or Masternode collaterals. These are excluded from zDOD minting.</string>
                </property>
                <property name="text">
-                <string>0.000 000 00 CCBC</string>
+                <string>0.000 000 00 DOD</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1105,7 +1100,7 @@
              <item row="2" column="0">
               <widget class="QLabel" name="labelLockedBalanceText">
                <property name="toolTip">
-                <string>Locked CCBC or Masternode collaterals. These are excluded from zCCBC minting.</string>
+                <string>Locked DOD or Masternode collaterals. These are excluded from zDOD minting.</string>
                </property>
                <property name="text">
                 <string>Locked:</string>
@@ -1115,7 +1110,7 @@
              <item row="3" column="0">
               <widget class="QLabel" name="labelUnLockedBalanceText">
                <property name="toolTip">
-                <string>Unlocked CCBCs. These can be used for zCCBC minting.</string>
+                <string>Unlocked DODs. These can be used for zDOD minting.</string>
                </property>
                <property name="text">
                 <string>Unlocked:</string>
@@ -1125,10 +1120,10 @@
              <item row="3" column="1">
               <widget class="QLabel" name="labelUnLockedBalance">
                <property name="toolTip">
-                <string>Unlocked CCBCs. These can be used for zCCBC minting.</string>
+                <string>Unlocked DODs. These can be used for zDOD minting.</string>
                </property>
                <property name="text">
-                <string>0.000 000 00 CCBC</string>
+                <string>0.000 000 00 DOD</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1136,7 +1131,7 @@
               </widget>
              </item>
              <item row="3" column="2">
-              <widget class="QLabel" name="labelCCBCPercent">
+              <widget class="QLabel" name="labelDODPercent">
                <property name="text">
                 <string>0 %</string>
                </property>
@@ -1195,7 +1190,7 @@
                 </font>
                </property>
                <property name="text">
-                <string>zCCBC Balance</string>
+                <string>zDOD Balance</string>
                </property>
               </widget>
              </item>
@@ -1209,10 +1204,8 @@
              <item row="4" column="0">
               <widget class="QLabel" name="labelzBalanceMatureText">
                <property name="toolTip">
-                <string>
-                                  Mature: more than 20 confirmation and more than 1 mints of the same denomination after it was minted.
-                                  These zCCBC are spendable.
-                                </string>
+                <string>Mature: more than 20 confirmation and more than 1 mints of the same denomination after it was minted.
+These zDOD are spendable.</string>
                </property>
                <property name="text">
                 <string>Mature:</string>
@@ -1238,10 +1231,10 @@
                 <cursorShape>IBeamCursor</cursorShape>
                </property>
                <property name="toolTip">
-                <string>All available zCCBC, unconfirmed and immature zCCBC included.</string>
+                <string>All available zDOD, unconfirmed and immature zDOD included.</string>
                </property>
                <property name="text">
-                <string notr="true">0.000 000 00 zCCBC</string>
+                <string notr="true">0.000 000 00 zDOD</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1273,7 +1266,7 @@
              <item row="1" column="0">
               <widget class="QLabel" name="labelzBalanceText">
                <property name="toolTip">
-                <string>All available zCCBC, unconfirmed and immature zCCBC included.</string>
+                <string>All available zDOD, unconfirmed and immature zDOD included.</string>
                </property>
                <property name="text">
                 <string>Total:</string>
@@ -1315,13 +1308,11 @@
                 </font>
                </property>
                <property name="toolTip">
-                <string>
-                                  Mature: more than 20 confirmation and more than 1 mints of the same denomination after it was minted.
-                                  These zCCBC are spendable.
-                                </string>
+                <string>Mature: more than 20 confirmation and more than 1 mints of the same denomination after it was minted.
+These zDOD are spendable.</string>
                </property>
                <property name="text">
-                <string>0.000 000 00 zCCBC</string>
+                <string>0.000 000 00 zDOD</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1331,10 +1322,8 @@
              <item row="2" column="0">
               <widget class="QLabel" name="labelzBalanceUnconfirmedText">
                <property name="toolTip">
-                <string>
-                                  Unconfirmed: less than 20 confirmations
-                                  Immature: confirmed, but less than 1 mints of the same denomination after it was minted
-                                </string>
+                <string>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mints of the same denomination after it was minted</string>
                </property>
                <property name="text">
                 <string>Unconfirmed:</string>
@@ -1350,13 +1339,11 @@
                 </font>
                </property>
                <property name="toolTip">
-                <string>
-                                  Unconfirmed: less than 20 confirmations
-                                  Immature: confirmed, but less than 1 mints of the same denomination after it was minted
-                                </string>
+                <string>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mints of the same denomination after it was minted</string>
                </property>
                <property name="text">
-                <string>0.000 000 00 zCCBC</string>
+                <string>0.000 000 00 zDOD</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1379,10 +1366,8 @@
              <item row="3" column="0">
               <widget class="QLabel" name="labelzBalanceImmatureText">
                <property name="toolTip">
-                <string>
-                                  Unconfirmed: less than 20 confirmations
-                                  Immature: confirmed, but less than 1 mints of the same denomination after it was minted
-                                </string>
+                <string>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mints of the same denomination after it was minted</string>
                </property>
                <property name="text">
                 <string>Immature:</string>
@@ -1398,13 +1383,11 @@
                 </font>
                </property>
                <property name="toolTip">
-                <string>
-                                  Unconfirmed: less than 20 confirmations
-                                  Immature: confirmed, but less than 1 mints of the same denomination after it was minted
-                                </string>
+                <string>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mints of the same denomination after it was minted</string>
                </property>
                <property name="text">
-                <string>0.000 000 00 zCCBC</string>
+                <string>0.000 000 00 zDOD</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1480,7 +1463,7 @@
                <cursorShape>WhatsThisCursor</cursorShape>
               </property>
               <property name="toolTip">
-               <string>The displayed information may be out of date. Your wallet automatically synchronizes with the CCBC network after a connection is established, but this process has not completed yet.</string>
+               <string>The displayed information may be out of date. Your wallet automatically synchronizes with the DOD network after a connection is established, but this process has not completed yet.</string>
               </property>
               <property name="styleSheet">
                <string notr="true">QLabel { color: red; }</string>

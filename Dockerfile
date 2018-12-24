@@ -17,22 +17,22 @@ RUN deps="alpine-sdk curl autoconf automake libtool boost-dev openssl-dev libeve
     make install && \
     mkdir /wallet &&\
     cd /wallet && \
-    git clone https://github.com/CryptoCashBack-Hub/CCBC.git . &&\   
+    git clone https://github.com/CryptoCashBack-Hub/DOD.git . &&\   
     ./autogen.sh && \
     ./configure LDFLAGS=-L/opt/db/lib CPPFLAGS=-I/opt/db/include \
       && \
     make install && \
-    strip /usr/local/bin/ccbcd &&\
-    strip /usr/local/bin/ccbc-cli &&\
-    rm /usr/local/bin/ccbc-tx &&\
-    rm /usr/local/bin/test_ccbc &&\
+    strip /usr/local/bin/dodd &&\
+    strip /usr/local/bin/dod-cli &&\
+    rm /usr/local/bin/dod-tx &&\
+    rm /usr/local/bin/test_dod &&\
     adduser -D wallet && \
     apk del $deps && \
     rm -r /opt/db/docs /var/cache/apk/* /wallet /db-$DB_VERSION
 
-VOLUME ["/home/wallet/.ccbc"]
+VOLUME ["/home/wallet/.dod"]
 
-EXPOSE 5520/tcp
+EXPOSE 2055/tcp
 
 USER wallet
-CMD ccbcd -printtoconsole
+CMD dodd -printtoconsole
