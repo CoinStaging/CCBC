@@ -69,7 +69,7 @@ static const Checkpoints::CCheckpointData data = {
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
     boost::assign::map_list_of
-	(0, uint256("0x9bca12f844ac0cb0afa221eb58347005aa230e82a852f7ed84f2d4f59be1983a"));
+	(0, uint256("0xb3440bbdfb35ee92a68511b3941190901d53366ac857d11b0b94c89855db826f"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
     1545594420,
@@ -104,7 +104,7 @@ public:
     {
         networkID = CBaseChainParams::MAIN;
         vReviveRewardAddress = "";   //Fill in address once wallet generated for AQX Revive Team
-        vTreasuryRewardAddress = ""; //Fill in address once wallet generated
+        vTreasuryRewardAddress = "DQuQTud9W4NKVvutkidoebLhG12nz8Z257";
         strNetworkID = "main";
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -160,8 +160,8 @@ public:
 
         hashGenesisBlock = genesis.GetHash();
 
-        printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
-        printf("genesis.hashMerkleRoot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
+        //printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
+        //printf("genesis.hashMerkleRoot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
         assert(hashGenesisBlock == uint256("0x9bca12f844ac0cb0afa221eb58347005aa230e82a852f7ed84f2d4f59be1983a"));
         assert(genesis.hashMerkleRoot == uint256("0x8233dde08288d6dc7dfd7c873e5c8462403ec4547e4e086d91367c2a4993208e"));
 
@@ -189,7 +189,7 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        strSporkKey = "030262a2a0679d01ab026d375c42b0a4122477123631b870e09665526c322c8899";
+        strSporkKey = "03844987527fecc25d0c5e3fb08c1fccd84fd98cc834b9f2395eeb0784d31cb852";
         strObfuscationPoolDummyAddress = "XCNAsFGy8k7amqRG26ikKyfVDwK8585Z6b";
         nStartMasternodePayments = 1545594420;
 
@@ -257,26 +257,26 @@ public:
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; // Dod: 1 day
         nTargetSpacing = 1 * 60;  // Dod: 1 minute
-        nLastPOWBlock = 200;
+        nLastPOWBlock = 300;
         nMaturity = 10;
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 51197; //approx Mon, 17 Apr 2017 04:00:00 GMT
         nMaxMoneyOut = 100000000 * COIN;
-        nZerocoinStartHeight = 201;
-        nZerocoinStartTime = 1534438799;
+        nZerocoinStartHeight = 301;
+        nZerocoinStartTime = 1544145744;
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 9908000; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 9891737; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = 9891730; //Last valid accumulator checkpoint
         
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1534438799;
-        genesis.nNonce = 969709;
+		genesis.nTime = 1544145744;
+		genesis.nNonce = 54438;
 
 	    hashGenesisBlock = genesis.GetHash();
         //printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
-            assert(hashGenesisBlock == uint256("0x9bca12f844ac0cb0afa221eb58347005aa230e82a852f7ed84f2d4f59be1983a"));
-            assert(genesis.hashMerkleRoot == uint256("0x8233dde08288d6dc7dfd7c873e5c8462403ec4547e4e086d91367c2a4993208e"));
+            assert(hashGenesisBlock == uint256("0xb3440bbdfb35ee92a68511b3941190901d53366ac857d11b0b94c89855db826f"));
+            assert(genesis.hashMerkleRoot == uint256("0x598ffdff99e67551b7a05dc08dfafcf2e7a6ecea89f9b369bf830f4b21ff160f"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -306,7 +306,7 @@ public:
         nPoolMaxTransactions = 2;
         strSporkKey = "030262a2a0679d01ab026d375c42b0a4122477123631b870e09665526c322c8899";
         strObfuscationPoolDummyAddress = "XCNAsFGy8k7amqRG26ikKyfVDwK8585Z6b";
-        nStartMasternodePayments = 1545594420;
+        nStartMasternodePayments = 1544145744;
         nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
                                        // here because we only have a 8 block finalization window on testnet
     }
