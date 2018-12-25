@@ -103,7 +103,7 @@ public:
     CMainParams()
     {
         networkID = CBaseChainParams::MAIN;
-        vReviveRewardAddress = "";   //Fill in address once wallet generated for AQX Revive Team
+        vReviveRewardAddress = "";
         vTreasuryRewardAddress = "DQuQTud9W4NKVvutkidoebLhG12nz8Z257";
         strNetworkID = "main";
         /**
